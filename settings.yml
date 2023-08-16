@@ -1,0 +1,13 @@
+sc_user_id:
+  type: string
+  default: ""
+  description: "Soundcloud User ID. Fetch user all song."
+music_player_icon:
+  type: string
+  default: "fab-soundcloud"
+  description: "Add icon to music player button."
+svg_icons: 
+  default: "fab-soundcloud"
+  type: "list"
+  list_type: "compact"
+  description: "List of FontAwesome 5 icons used in this theme component"
