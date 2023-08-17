@@ -1,7 +1,17 @@
+embed_type:
+  default: user
+  type: enum
+  choices:
+    - playlist
+  description: "Select the embed type. From where you want to embed music."
 sc_user_id:
   type: string
   default: ""
-  description: "Soundcloud User ID. Fetch user all song."
+  description: "Soundcloud User ID. Fetch user songs."
+sc_playlist_id:
+  type: string
+  default: ""
+  description: "Soundcloud Playlist ID. Fetch a playlist."
 music_player_icon:
   type: string
   default: "fab-soundcloud"
