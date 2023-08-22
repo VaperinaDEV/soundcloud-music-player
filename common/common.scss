@@ -21,6 +21,7 @@
     background: var(--primary-low);
     box-shadow: var(--shadow-card);
     border-top-right-radius: 3px;
+    padding-bottom: env(safe-area-inset-bottom);
     transform: translateY(100%);
     z-index: 300;
     
@@ -55,6 +56,7 @@
     &:not(.open) {
       button.toggle-sc-player {
         transform: translateY(calc(-100% - env(safe-area-inset-bottom)));
+        transition: transform linear 0.1s;
         // Footer Nav
         body.footer-nav-visible:not(.footer-nav-ipad) & {
           transform: translateY(calc(-100% - var(--footer-nav-height) - env(safe-area-inset-bottom)));
