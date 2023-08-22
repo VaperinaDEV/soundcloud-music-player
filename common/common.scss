@@ -2,9 +2,11 @@
   display: flex;
   justify-content: center;
   height: 40px;
+  
   .desktop-view body.has-sidebar-page & {
     justify-content: flex-end;
   }
+  
   .music-player {
     position: fixed;
     bottom: 0;
@@ -21,39 +23,41 @@
     border-top-right-radius: 3px;
     transform: translateY(100%);
     z-index: 300;
+    
     .desktop-view body.has-sidebar-page & {
       left: var(--d-sidebar-width);
     }
+    
     .desktop-view body.sidebar-animate & {
       opacity: 0;
     }
+    
     .desktop-view body:not(.sidebar-animate) & {
       opacity: 1;
       transition: transform 0.25s ease, opacity var(--d-sidebar-animation-time);
     }
+    
     .mobile-view & {
       max-width: calc(100% - 20px);
       transition: transform 0.25s ease;
     }
+    
     &.open {
       transform: translateY(0);
       button.toggle-sc-player {
         transform: translateY(-100%);
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+      }
+      .d-icon-angle-up {
+        transform: rotate(180deg);
       }
     }
 
     &:not(.open) {
       button.toggle-sc-player {
         transform: translateY(calc(-100% - env(safe-area-inset-bottom)));
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-        html.mobile-device.ios-device & {
-          border-bottom-left-radius: 3px;
-          border-bottom-right-radius: 3px;
+        // Footer Nav
+        body.footer-nav-visible:not(.footer-nav-ipad) & {
+          transform: translateY(calc(-100% - var(--footer-nav-height) - env(safe-area-inset-bottom)));
         }
       }
     }
@@ -74,16 +78,6 @@
       width: 100%;
       height: 100%;
       margin-top: -35px;
-    }
-  }
-  // Footer Nav
-  body.footer-nav-visible:not(.footer-nav-ipad) & {
-    .music-player:not(.open) {
-      button.toggle-sc-player {
-        transform: translateY(calc(-100% - var(--footer-nav-height) - env(safe-area-inset-bottom)));
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-      }
     }
   }
 }
