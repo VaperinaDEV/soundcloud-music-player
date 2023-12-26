@@ -22,7 +22,7 @@ sound_cloud_player:
           },
           "sc_title": {
             "type": "string",
-            "description": "Type here the title."
+            "description": "Type here the title of playlist or user embed. This title is appear on the button above the SoundCloud player iframe."
           }
         },
         "additionalProperties": false
