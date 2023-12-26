@@ -1,17 +1,34 @@
-embed_type:
-  default: user
-  type: enum
-  choices:
-    - playlist
-  description: "Select the embed type. From where you want to embed music."
-sc_user_id:
-  type: string
-  default: ""
-  description: "Soundcloud User ID. Fetch user songs."
-sc_playlist_id:
-  type: string
-  default: ""
-  description: "Soundcloud Playlist ID. Fetch a playlist."
+sound_cloud_player:
+  default: >-
+    []
+  json_schema: >-
+    {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "embed_type": {
+            "type": "string",
+            "description": "Select the embed type. From where you want to embed music.",
+            "enum": [
+              "users",
+              "playlists"
+            ]
+          },
+          "sc_id": {
+            "type": "string",
+            "description": "Paste here the SoundCloud User / Playlist ID."
+          },
+          "sc_title": {
+            "type": "string",
+            "description": "Type here the title of playlist or user embed. This title is appear on the button above the SoundCloud player iframe."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+
 music_player_icon:
   type: string
   default: "fab-soundcloud"

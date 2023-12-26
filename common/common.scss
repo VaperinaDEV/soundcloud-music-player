@@ -10,10 +10,6 @@
   .music-player {
     position: fixed;
     bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
     max-width: calc(var(--d-max-width) - 2em);
     max-height: 80svh;
     width: 100%;
@@ -27,6 +23,7 @@
     
     .desktop-view body.has-sidebar-page & {
       left: var(--d-sidebar-width);
+      max-width: calc(100% - var(--d-sidebar-width));
     }
     
     .desktop-view body.sidebar-animate & {
@@ -75,11 +72,25 @@
         }
       }
     }
+
+    .player-iframes {
+      height: 100%;
+      width: 100%;
+      margin-top: -34px;
+      overflow-y: auto;
+      .player-sc-iframe {
+        button.toggle-sc-iframe {
+          width: 100%;
+        }
+        &.full-size {
+          height: calc(100% - 39px);
+        }
+      }
+    }
     
     iframe#sc-widget {
       width: 100%;
       height: 100%;
-      margin-top: -35px;
     }
   }
 }
