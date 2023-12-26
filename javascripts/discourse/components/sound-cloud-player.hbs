@@ -1,0 +1,19 @@
+<div class="player-iframes">
+  {{#each SoundCloudPlayer as |scp|}}
+    <div class="player-sc-iframe">
+      <DButton
+        @class="btn-default toggle-sc-iframe"
+        @translatedLabel={{scp.sc_title}}
+        @action={{toggleScIframe}}
+      >
+        {{d-icon "list"}}
+      </DButton>
+      <iframe 
+        id="sc-widget" 
+        src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/{{scp.embed_type}}/{{scp.sc_id}}" 
+        scrolling="no" 
+        frameborder="no">
+      </iframe>
+    </div>
+  {{/each}}
+</div>
