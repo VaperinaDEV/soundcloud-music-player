@@ -2,6 +2,10 @@
   display: flex;
   justify-content: center;
   height: 40px;
+
+  body.has-full-page-chat & {
+    display: none;
+  }
   
   .desktop-view body.has-sidebar-page & {
     justify-content: flex-end;
